@@ -3,8 +3,8 @@ self.addEventListener('install', event => {
     caches.open('intranet-cache').then(cache => {
       return cache.addAll([
         '/',
-        '/sites/alvinnenberg.sharepoint.com',
-        '/SiteAssets/icons/icon-192.png'
+        'https://alvinnenberg.sharepoint.com/sites/alvinnenberg.sharepoint.com',
+        'https://alvinnenberg.sharepoint.com/SiteAssets/icons/icon-192.png'
       ]);
     })
   );
@@ -16,4 +16,5 @@ self.addEventListener('fetch', event => {
       return response || fetch(event.request);
     })
   );
+
 });
