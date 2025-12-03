@@ -2,7 +2,7 @@
   "name": "ALV Intranet App",
   "short_name": "ALV app",
   "description": "",
-  "start_url": "/sites/alvIntranet",
+  "start_url": "https://alvinnenberg.sharepoint.com/sites/alvIntranet/",
   "display": "standalone",
   "background_color": "#2a60b2",
   "theme_color": "#0012ff",
@@ -19,9 +19,10 @@
     }
   ],
   "orientation": "portrait",
-  "scope": "https://alvinnenberg.sharepoint.com",
+  "scope": "https://alvinnenberg.sharepoint.com/sites/alvIntranet/",
   "lang": "en"
 }
+
 
 
 
