@@ -2,24 +2,25 @@
   "name": "ALV Intranet App",
   "short_name": "ALV app",
   "description": "",
-  "start_url": "/sites/alvIntranet",
+  "start_url": "https://alvinnenberg.sharepoint.com/sites/alvIntranet",
   "display": "standalone",
   "background_color": "#2a60b2",
   "theme_color": "#0012ff",
   "icons": [
     {
-      "src": "/sites/alvIntranet/SiteAssets/pwa/icons/icon-192.png",
+      "src": "https://alvinnenberg.sharepoint.com/sites/alvIntranet/SiteAssets/pwa/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/sites/alvIntranet/SiteAssets/pwa/icons/icon-512.png",
+      "src": "https://alvinnenberg.sharepoint.com/sites/alvIntranet/SiteAssets/pwa/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "orientation": "portrait",
-  "scope": "/sites/alvIntranet/",
+  "scope": "https://alvinnenberg.sharepoint.com/sites/alvIntranet/",
   "lang": "en"
 }
+
 
