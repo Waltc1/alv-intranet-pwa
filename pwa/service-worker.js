@@ -3,18 +3,29 @@ self.addEventListener('install', event => {
     caches.open('intranet-cache').then(cache => {
       return cache.addAll([
         '/',
-        'https://alvinnenberg.sharepoint.com/sites/alvinnenberg.sharepoint.com',
-        'https://alvinnenberg.sharepoint.com/SiteAssets/icons/icon-192.png'
+        '/sites/alvIntranet/SiteAssets/pwa/icons/icon-192.png',
+        '/sites/alvIntranet/SiteAssets/pwa/icons/icon-512.png'
       ]);
     })
   );
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
-
+  const url = new URL(event.request.url);
+  // Cache ONLY SiteAssets files
+  if (url.pathname.startsWith('/sites/alvIntranet/SiteAssets/')) {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return (
+          response ||
+          fetch(event.request).then(fetchResponse => {
+            return caches.open('intranet-cache-v1').then(cache => {
+              cache.put(event.request, fetchResponse.clone());
+              return fetchResponse;
+            });
+          })
+        );
+      })
+    );
 });
+
